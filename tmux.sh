@@ -9,7 +9,7 @@ wget -qO- https://ftp.gnu.org/gnu/ncurses/ncurses-6.2.tar.gz | tar -xzvf - &&
 cd libevent-2.1.11-stable &&
 ./configure --prefix="$HOME/tmux_depend" --disable-shared &&
 make && make install &&
-cd&&
+cd &&
 
 # Configure, compile, and install ncurses
 cd ncurses-6.2 &&
