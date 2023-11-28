@@ -1,6 +1,23 @@
-一键安装非root版tmux
+安装非root版tmux
 ```
-bash <(wget -qO- https://raw.githubusercontent.com/seav1/tmux/main/tmux.sh)
+wget -qO- https://github.com/tmux/tmux/releases/download/3.2/tmux-3.2.tar.gz | tar -xzvf -
+wget -qO- https://github.com/libevent/libevent/releases/download/release-2.1.11-stable/libevent-2.1.11-stable.tar.gz | tar -xzvf -
+wget -qO- https://ftp.gnu.org/gnu/ncurses/ncurses-6.2.tar.gz | tar -xzvf -
+cd libevent-2.1.11-stable
+./configure --prefix="$HOME/tmux_depend" --disable-shared
+make  make install
+cd
+cd ncurses-6.2
+./configure --prefix="$HOME/tmux_depend"
+make  make install
+cd
+cd tmux-3.2
+./configure CFLAGS="-I$HOME/tmux_depend/include -I/$HOME/tmux_depend/include/ncurses" LDFLAGS="-L/$HOME/tmux_depend/lib -L/$HOME/tmux_depend/include/ncurses -L/$HOME/tmux_depend/include"
+make
+cp tmux "$HOME/tmux_depend/bin"
+cd
+echo 'export PATH="$HOME/tmux_depend/bin:$PATH"' >> ~/.bashrc
+source ~/.bashrc
 ```
 
 1）新建会话，比如新创建一个会话以"myapp"命名
