@@ -18,7 +18,7 @@ tmux ls
 ```
 
 3）登录一个已知会话。即从终端环境进入会话。 
-第一个参数a也可以写成attach。后面的aaa是会话名称。 
+第一个参数a也可以写成attach。后面的myapp是会话名称。 
 ```
 tmux a -t myapp
 ```
@@ -28,9 +28,6 @@ tmux a -t myapp
 如果直接ctrl + d，就会在退出会话的通话也关闭了该会话！
  
 5）关闭会话（销毁会话）
-```
-tmux ls
-```
 ```
 tmux kill-session -t myapp
 ```
