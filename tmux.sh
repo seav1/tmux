@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 wget -qO- https://github.com/tmux/tmux/releases/download/3.2/tmux-3.2.tar.gz
 wget -qO- https://github.com/libevent/libevent/releases/download/release-2.1.11-stable/libevent-2.1.11-stable.tar.gz
 wget -qO- https://ftp.gnu.org/gnu/ncurses/ncurses-6.2.tar.gz
