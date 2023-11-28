@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # Download and extract tmux, libevent, and ncurses
-wget -qO- https://github.com/tmux/tmux/releases/download/3.2/tmux-3.2.tar.gz | tar -xzvf -
-wget -qO- https://github.com/libevent/libevent/releases/download/release-2.1.11-stable/libevent-2.1.11-stable.tar.gz | tar -xzvf -
-wget -qO- https://ftp.gnu.org/gnu/ncurses/ncurses-6.2.tar.gz | tar -xzvf -
+wget -qO- https://github.com/tmux/tmux/releases/download/3.2/tmux-3.2.tar.gz | tar -xzvf - >/dev/null 2>&1
+wget -qO- https://github.com/libevent/libevent/releases/download/release-2.1.11-stable/libevent-2.1.11-stable.tar.gz | tar -xzvf - >/dev/null 2>&1
+wget -qO- https://ftp.gnu.org/gnu/ncurses/ncurses-6.2.tar.gz | tar -xzvf - >/dev/null 2>&1
 
 # Configure, compile, and install libevent
 cd libevent-2.1.11-stable
